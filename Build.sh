@@ -1,0 +1,1 @@
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSDL_TESTS=OFF -DSDL_INSTALL_TESTS=OFF && cmake --build build
