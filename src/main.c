@@ -13,12 +13,13 @@ void programInit(GameEngine *e) {
     SDL_Log("err:%s\n", SDL_GetError());
     return;
   }
-  e->win = SDL_CreateWindow("Hello", 800, 600,NULL);
+  e->win = SDL_CreateWindow("Hello", 800, 600,0);
   if (!e->win) {
     SDL_Log("err:%s\n", SDL_GetError());
     return;
   }
-  e->ren = SDL_CreateRenderere(e->win, NULL);
+  e->ren = SDL_CreateRenderer(e->win, NULL);
+
   if (!e->ren) {
     SDL_Log("err:%s\n", SDL_GetError());
     return;
