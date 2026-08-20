@@ -1,1 +1,3 @@
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSDL_TESTS=OFF -DSDL_INSTALL_TESTS=OFF && cmake --build build
+mkdir -p build 
+cmake -S . -B build -G Ninja
+cmake --build build --parallel -j$(nproc)
