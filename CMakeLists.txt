@@ -7,10 +7,15 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 
 add_subdirectory(extern/SDL EXCLUDE_FROM_ALL)
 
-
 find_package(SQLite3 REQUIRED)
 
-add_executable(LightMania ./src/main.c)
+add_executable(LightMania ./src/main.c ./src/GameEngine.c)
+
+target_include_directories(LightMania PRIVATE
+    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/include 
+    ${CMAKE_SOURCE_DIR}/extern/SDL/include
+)
 
 target_link_libraries(LightMania 
     SDL3::SDL3
