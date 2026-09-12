@@ -1,4 +1,7 @@
+#include "SDL3/SDL_error.h"
+#include "SDL3/SDL_log.h"
 #include "include/base.h"
+#include <SDL3_ttf/SDL_ttf.h>
 #include "include/GameEngine.h"
 
 GameEngine *createEngine() { 
@@ -16,10 +19,13 @@ void programeInit(GameEngine *e) {
     return;
   }
   e->ren = SDL_CreateRenderer(e->win, NULL);
-
   if (!e->ren) {
     SDL_Log("err:%s\n", SDL_GetError());
     return;
+  }
+  if(!TTF_Init()){
+    SDL_Log("err:%s\n",SDL_GetError());
+    return ;
   }
 }
 

@@ -9,7 +9,7 @@ add_subdirectory(extern/SDL EXCLUDE_FROM_ALL)
 
 find_package(SQLite3 REQUIRED)
 
-add_executable(LightMania ./src/main.c ./src/GameEngine.c)
+add_executable(LightMania ./src/main.c ./src/GameEngine.c ./src/GameLoop.c)
 
 target_include_directories(LightMania PRIVATE
     ${CMAKE_SOURCE_DIR}

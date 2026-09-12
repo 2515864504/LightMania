@@ -1,5 +1,5 @@
+#include "GameLoop.h"
 #include "include/base.h"
-#include "include/GameEngine.h"
 
 int main() {
   GameEngine *e = createEngine();
@@ -8,8 +8,9 @@ int main() {
     return -1;
   }
     programeInit(e);
-  
-  
+ 
+    gameLoop(e);
+     
     programeExit(e);
     return 0;
 }
